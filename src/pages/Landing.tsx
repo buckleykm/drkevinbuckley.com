@@ -1,7 +1,7 @@
 import { profile } from '../content'
 
 const navItems = [
-  { num: 4, label: 'CASE STUDIES', href: '/case-studies' },
+  { num: 4, label: 'ARTIFACTS', href: '/artifacts' },
   { num: 3, label: 'SKILLS', href: '/resume#skills' },
   { num: 2, label: 'ABOUT', href: '/resume#about' },
   { num: 1, label: 'CONTACT', href: '/resume#contact' },

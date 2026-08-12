@@ -173,17 +173,17 @@ export const projects: Project[] = [
     description:
       'A repeatable scoring framework that ranks an entire IT portfolio by measurable mission value versus cost and technical debt, turning modernization prioritization into an evidence-based decision instead of a guess.',
     tech: ['Portfolio Valuation', 'Cost of Delay', 'WSJF', 'ISO 21504'],
-    link: '/case-studies/value-management',
+    link: '/artifacts/value-management',
   },
   {
-    title: 'Case Study Placeholder',
+    title: 'Artifact Placeholder',
     description:
       'Add a second artifact: a presentation, whitepaper, dashboard, or process you designed. Link to a PDF, deck, or write-up if you have one.',
     tech: ['Replace', 'With', 'Real Tags'],
     placeholder: true,
   },
   {
-    title: 'Case Study Placeholder',
+    title: 'Artifact Placeholder',
     description:
       'A third slot for a project, publication, or talk. Delete this card if you only have two to show.',
     tech: ['Replace', 'With', 'Real Tags'],
@@ -191,7 +191,7 @@ export const projects: Project[] = [
   },
 ]
 
-export type CaseStudy = {
+export type Artifact = {
   slug: string
   title: string
   tagline: string
@@ -209,7 +209,7 @@ export type CaseStudy = {
   closing: string
 }
 
-export const caseStudies: CaseStudy[] = [
+export const artifacts: Artifact[] = [
   {
     slug: 'value-management',
     title: 'Value-Driven IT Portfolio Valuation',
