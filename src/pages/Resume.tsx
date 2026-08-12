@@ -16,10 +16,19 @@ function SectionHeading({ children }: { children: React.ReactNode }) {
   )
 }
 
-function TopBar() {
+const sectionNav = [
+  { label: 'About', href: '#about' },
+  { label: 'Experience', href: '#experience' },
+  { label: 'Skills', href: '#skills' },
+  { label: 'Projects', href: '#projects' },
+  { label: 'Education', href: '#education' },
+  { label: 'Contact', href: '#contact' },
+]
+
+function TitleSection() {
   return (
-    <div className="bg-[#0b2416] px-6 py-4">
-      <div className="mx-auto flex max-w-4xl items-center justify-between text-sm">
+    <header className="sticky top-0 z-20 border-b border-emerald-900 bg-[#0b2416] text-white">
+      <div className="mx-auto flex max-w-4xl items-center justify-between px-6 py-3 text-sm">
         <Link to="/" className="font-semibold tracking-wide text-emerald-100 hover:text-white">
           ← Kevin Buckley
         </Link>
@@ -31,20 +40,14 @@ function TopBar() {
           Download PDF
         </a>
       </div>
-    </div>
-  )
-}
 
-function Hero() {
-  return (
-    <header className="border-b border-emerald-900 bg-[#0b2416] text-white">
-      <div className="mx-auto max-w-4xl px-6 py-20 text-center">
-        <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
+      <div className="mx-auto max-w-4xl px-6 pb-6 pt-2 text-center">
+        <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
           {profile.name}, {profile.credentials}
         </h1>
-        <p className="mt-3 text-lg text-emerald-100/90">{profile.title}</p>
-        <p className="text-emerald-200/60">{profile.tagline}</p>
-        <div className="mt-6 flex flex-wrap justify-center gap-4 text-sm text-emerald-100/80">
+        <p className="mt-2 text-base text-emerald-100/90 sm:text-lg">{profile.title}</p>
+        <p className="text-sm text-emerald-200/60">{profile.tagline}</p>
+        <div className="mt-4 flex flex-wrap justify-center gap-4 text-sm text-emerald-100/80">
           <a className="hover:text-white" href={`mailto:${profile.email}`}>
             {profile.email}
           </a>
@@ -63,13 +66,27 @@ function Hero() {
           </a>
         </div>
       </div>
+
+      <nav className="border-t border-emerald-900/70 bg-[#091f13]">
+        <div className="mx-auto flex max-w-4xl flex-wrap justify-center gap-x-6 gap-y-2 px-6 py-3 text-xs font-semibold uppercase tracking-[1.5px]">
+          {sectionNav.map((item) => (
+            <a
+              key={item.href}
+              href={item.href}
+              className="text-emerald-100/80 hover:text-white"
+            >
+              {item.label}
+            </a>
+          ))}
+        </div>
+      </nav>
     </header>
   )
 }
 
 function About() {
   return (
-    <section id="about" className="mx-auto max-w-4xl px-6 py-16">
+    <section id="about" className="mx-auto max-w-4xl scroll-mt-[220px] px-6 py-16">
       <SectionHeading>Summary</SectionHeading>
       <p className="mt-4 leading-relaxed text-slate-600">{profile.summary}</p>
     </section>
@@ -78,7 +95,7 @@ function About() {
 
 function Experience() {
   return (
-    <section id="experience" className="border-t border-emerald-100 bg-emerald-50/40">
+    <section id="experience" className="scroll-mt-[220px] border-t border-emerald-100 bg-emerald-50/40">
       <div className="mx-auto max-w-4xl px-6 py-16">
         <SectionHeading>Experience</SectionHeading>
         <div className="mt-8 space-y-10">
@@ -110,7 +127,7 @@ function Experience() {
 
 function Skills() {
   return (
-    <section id="skills" className="mx-auto max-w-4xl px-6 py-16">
+    <section id="skills" className="mx-auto max-w-4xl scroll-mt-[220px] px-6 py-16">
       <SectionHeading>Skills</SectionHeading>
       <div className="mt-8 grid gap-8 sm:grid-cols-2">
         {skillGroups.map((group) => (
@@ -135,7 +152,7 @@ function Skills() {
 
 function Projects() {
   return (
-    <section className="border-t border-emerald-100 bg-emerald-50/40">
+    <section id="projects" className="scroll-mt-[220px] border-t border-emerald-100 bg-emerald-50/40">
       <div className="mx-auto max-w-4xl px-6 py-16">
         <SectionHeading>Projects &amp; Artifacts</SectionHeading>
         <p className="mt-2 text-sm text-emerald-700/70">
@@ -192,7 +209,7 @@ function Projects() {
 
 function EducationSection() {
   return (
-    <section className="mx-auto max-w-4xl px-6 py-16">
+    <section id="education" className="mx-auto max-w-4xl scroll-mt-[220px] px-6 py-16">
       <SectionHeading>Education &amp; Certifications</SectionHeading>
       <div className="mt-8 grid gap-8 sm:grid-cols-2">
         <div>
@@ -224,7 +241,7 @@ function EducationSection() {
 
 function Contact() {
   return (
-    <footer id="contact" className="border-t border-emerald-900 bg-[#0b2416] text-white">
+    <footer id="contact" className="scroll-mt-[220px] border-t border-emerald-900 bg-[#0b2416] text-white">
       <div className="mx-auto max-w-4xl px-6 py-16 text-center">
         <h2 className="text-2xl font-semibold tracking-tight text-white sm:text-3xl">
           Get in touch
@@ -260,8 +277,7 @@ function Contact() {
 function Resume() {
   return (
     <div className="min-h-screen bg-white">
-      <TopBar />
-      <Hero />
+      <TitleSection />
       <About />
       <Experience />
       <Skills />
