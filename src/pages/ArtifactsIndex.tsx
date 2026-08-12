@@ -1,5 +1,12 @@
 import { Link } from 'react-router-dom'
-import { artifacts } from '../content'
+import { artifacts, type ArtifactType } from '../content'
+
+const typeOrder: ArtifactType[] = ['Case Study', 'Publication', 'White Paper']
+const typeSectionLabel: Record<ArtifactType, string> = {
+  'Case Study': 'Case Studies',
+  Publication: 'Publications',
+  'White Paper': 'White Papers',
+}
 
 function ArtifactsIndex() {
   return (
@@ -26,30 +33,45 @@ function ArtifactsIndex() {
       </header>
 
       <section className="mx-auto max-w-3xl px-6 py-14">
-        <div className="space-y-6">
-          {artifacts.map((artifact) => (
-            <Link
-              key={artifact.slug}
-              to={`/artifacts/${artifact.slug}`}
-              className="block rounded-lg border border-emerald-100 bg-white p-6 transition hover:border-emerald-300 hover:shadow-sm"
-            >
-              <h2 className="text-lg font-semibold text-[#0b2416]">{artifact.title}</h2>
-              <p className="mt-2 text-sm leading-relaxed text-slate-600">{artifact.summary}</p>
-              <div className="mt-4 flex flex-wrap gap-2">
-                {artifact.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="rounded bg-emerald-50 px-2 py-0.5 text-xs text-emerald-700"
-                  >
-                    {tag}
-                  </span>
-                ))}
+        <div className="space-y-14">
+          {typeOrder.map((type) => {
+            const items = artifacts.filter((artifact) => artifact.type === type)
+            if (items.length === 0) return null
+            return (
+              <div key={type}>
+                <h2 className="text-sm font-semibold uppercase tracking-wide text-emerald-700">
+                  {typeSectionLabel[type]}
+                </h2>
+                <div className="mt-5 space-y-6">
+                  {items.map((artifact) => (
+                    <Link
+                      key={artifact.slug}
+                      to={`/artifacts/${artifact.slug}`}
+                      className="block rounded-lg border border-emerald-100 bg-white p-6 transition hover:border-emerald-300 hover:shadow-sm"
+                    >
+                      <h3 className="text-lg font-semibold text-[#0b2416]">{artifact.title}</h3>
+                      <p className="mt-2 text-sm leading-relaxed text-slate-600">
+                        {artifact.summary}
+                      </p>
+                      <div className="mt-4 flex flex-wrap gap-2">
+                        {artifact.tags.map((tag) => (
+                          <span
+                            key={tag}
+                            className="rounded bg-emerald-50 px-2 py-0.5 text-xs text-emerald-700"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                      <span className="mt-4 inline-block text-sm font-medium text-emerald-600">
+                        View artifact →
+                      </span>
+                    </Link>
+                  ))}
+                </div>
               </div>
-              <span className="mt-4 inline-block text-sm font-medium text-emerald-600">
-                View artifact →
-              </span>
-            </Link>
-          ))}
+            )
+          })}
         </div>
       </section>
     </div>

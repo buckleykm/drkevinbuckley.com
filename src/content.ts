@@ -212,8 +212,11 @@ export const projects: Project[] = [
   },
 ]
 
+export type ArtifactType = 'Case Study' | 'Publication' | 'White Paper'
+
 export type Artifact = {
   slug: string
+  type: ArtifactType
   title: string
   tagline: string
   summary: string
@@ -242,6 +245,7 @@ export type Artifact = {
 export const artifacts: Artifact[] = [
   {
     slug: 'value-management',
+    type: 'Case Study',
     title: 'Case Study: Value-Driven IT Portfolio Valuation',
     tagline: 'A repeatable scoring framework for prioritizing IT investment by measurable mission value, not gut feel.',
     summary:
@@ -372,6 +376,7 @@ export const artifacts: Artifact[] = [
   },
   {
     slug: 'women-in-computing-careers',
+    type: 'Publication',
     title:
       'Publication: Women in Computing Careers — Discovering the Factors That Attract and Retain Them: A Qualitative Research Study',
     tagline:
@@ -394,6 +399,7 @@ export const artifacts: Artifact[] = [
   },
   {
     slug: 'creating-it-value-through-leadership',
+    type: 'Publication',
     title: 'Publication: Creating IT Value Through Leadership',
     tagline:
       'How collaborative leadership styles can help IT organizations create measurable value, not just deliver technology.',
@@ -424,6 +430,7 @@ export const artifacts: Artifact[] = [
   },
   {
     slug: 'leadership-is-an-art',
+    type: 'Publication',
     title: 'Publication: Leadership Is an Art, Management Is a Science',
     tagline:
       'Why treating leadership and management as the same discipline undersells both — and what separates a great leader from a great manager.',
@@ -447,6 +454,7 @@ export const artifacts: Artifact[] = [
   },
   {
     slug: 'it-and-organizational-performance',
+    type: 'Publication',
     title: 'Publication: Information Technology and Organizational Performance',
     tagline:
       'How IT investment translates into measurable organizational performance — and the metrics that prove it.',
@@ -471,6 +479,7 @@ export const artifacts: Artifact[] = [
   },
   {
     slug: 'overcoming-organizational-resistance-to-change',
+    type: 'Publication',
     title: 'Publication: Overcoming Organizational Resistance to Change',
     tagline:
       "Why change management methodologies like Lewin's and Kotter's models address resistance indirectly — and what the research still gets wrong about it.",
