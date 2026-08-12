@@ -17,6 +17,7 @@ function ArtifactDetail() {
   }
 
   const isCaseStudy = Boolean(artifact.challenge)
+  const isWhitePaper = Boolean(artifact.sections)
 
   return (
     <div className="min-h-screen bg-white">
@@ -167,6 +168,39 @@ function ArtifactDetail() {
             </div>
             <p className="mt-10 leading-relaxed text-slate-600">{artifact.closing}</p>
           </section>
+        </>
+      ) : isWhitePaper ? (
+        <>
+          {artifact.sections!.map((section, i) => (
+            <section
+              key={section.heading}
+              className={
+                i % 2 === 1
+                  ? 'border-t border-emerald-100 bg-emerald-50/40'
+                  : undefined
+              }
+            >
+              <div className="mx-auto max-w-3xl px-6 py-14">
+                <h2 className="text-xl font-semibold tracking-tight text-[#0b2416] sm:text-2xl">
+                  {section.heading}
+                </h2>
+                {section.paragraphs && (
+                  <div className="mt-4 space-y-4 leading-relaxed text-slate-600">
+                    {section.paragraphs.map((p) => (
+                      <p key={p}>{p}</p>
+                    ))}
+                  </div>
+                )}
+                {section.bullets && (
+                  <ul className="mt-4 list-disc space-y-3 pl-5 leading-relaxed text-slate-600">
+                    {section.bullets.map((b) => (
+                      <li key={b}>{b}</li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            </section>
+          ))}
         </>
       ) : (
         <section className="mx-auto max-w-3xl px-6 py-14">

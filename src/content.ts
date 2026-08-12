@@ -210,6 +210,13 @@ export const projects: Project[] = [
     tech: ['Publication', 'Article', 'Change Management', 'Organizational Behavior'],
     link: '/artifacts/overcoming-organizational-resistance-to-change',
   },
+  {
+    title: 'Building a Modern, Risk-Based Change Management Framework',
+    description:
+      'A modern, risk-based change management framework — built around a five-factor risk model and a Virtual Change Advisory Board — that replaced ad hoc, one-size-fits-all change approvals with governance scaled to actual risk.',
+    tech: ['White Paper', 'Change Management', 'IT Governance', 'Risk Management', 'ITIL'],
+    link: '/artifacts/change-management-framework',
+  },
 ]
 
 export type ArtifactType = 'Case Study' | 'Publication' | 'White Paper'
@@ -240,6 +247,8 @@ export type Artifact = {
   abstractHeading?: string
   keywords?: string[]
   references?: string[]
+  // White-paper fields (optional — used for long-form, multi-section artifacts).
+  sections?: { heading: string; paragraphs?: string[]; bullets?: string[] }[]
 }
 
 export const artifacts: Artifact[] = [
@@ -519,6 +528,110 @@ export const artifacts: Artifact[] = [
       'McKay, K., Kuntz, J. R., & Naswall, K. (2013). The effect of affective commitment, communication and participation on resistance to change: The role of change readiness. New Zealand Journal of Psychology, 42(2), 29-40.',
       'Rafferty, A. E., Jimmieson, N. L., & Armenakis, A. A. (2013). Change readiness: A multilevel review. Journal of Management, 39(1), 110-135.',
       'Robbins, S. P., & Judge, T. A. (2015). Organizational behavior (16th ed.). Pearson.',
+    ],
+  },
+  {
+    slug: 'change-management-framework',
+    type: 'White Paper',
+    title: 'White Paper: Building a Modern, Risk-Based Change Management Framework',
+    tagline:
+      'A risk-based change management framework that replaced fragmented, one-size-fits-all change approvals with governance scaled to each change’s actual risk.',
+    summary:
+      'A modern, risk-based change management framework — built around a five-factor risk model and a Virtual Change Advisory Board — that replaced ad hoc, one-size-fits-all change approvals with governance scaled to actual risk.',
+    tags: ['White Paper', 'Change Management', 'IT Governance', 'Risk Management', 'ITIL'],
+    sections: [
+      {
+        heading: 'Executive Summary',
+        paragraphs: [
+          'A major public-sector IT organization’s existing change management process had not kept pace with its evolving technology environment. Without a unified, risk-aware approach to approving changes, the organization saw inconsistencies, oversight gaps, and inefficiencies — challenges that grew more acute as a move to cloud platforms and Agile/DevOps practices increased the volume and velocity of system changes.',
+          'The organization conducted a comprehensive Change Management Review and designed a modern, risk-based change management framework that introduces a unified set of policies and procedures across all IT teams. The framework is codified in a concise governance policy, supported by detailed process guides and Standard Operating Procedures (SOPs) that cover the how of implementation. It features a formal risk scoring matrix that classifies changes by risk level and tailors the approval workflow accordingly — from low to very high risk. It replaces rigid weekly change boards with a Virtual Change Advisory Board (vCAB) model that convenes real-time reviews only for high-risk changes, strengthens integration with cybersecurity and project governance, and requires that all changes be logged in one authoritative system with standardized data requirements for traceability and audit readiness.',
+          'By aligning with industry best practices — including ITIL v4, NIST SP 800-128/37, and OMB A-130 — and focusing on measurable outcomes, the framework is expected to improve operational stability, change agility, and transparency. Leadership and stakeholders gain clearer visibility into upcoming changes through a centralized change calendar with risk-based notification lead times, low-risk standard changes move through faster approvals, and high-risk changes receive thorough scrutiny. The organization also expects fewer incidents and emergency changes, driven by more disciplined procedures, better up-front risk mitigation, and continuous improvement informed by tracked metrics such as change success rate, approval cycle time, and rollback frequency.',
+        ],
+      },
+      {
+        heading: 'Background & Challenges',
+        paragraphs: [
+          'The organization’s previous change management process — established years earlier and only minorly updated since — had become fragmented and outdated. Different IT teams followed their own protocols for deploying changes, so key steps like risk assessments and stakeholder notifications were not uniformly performed. An existing change control board in one division focused narrowly on approving funding and scheduling rather than technical risk and impact, so many changes — especially application updates and infrastructure tweaks — bypassed rigorous risk review. In practice, teams often treated change management as a formality: filling out change records after deployment, or using fast-track "emergency" designations so broadly that many non-critical changes were classified as urgent, undermining governance and increasing the potential for uncontrolled system modifications.',
+          'These issues were magnified by broader shifts in the IT landscape. The organization was migrating systems to the cloud and adopting Agile/DevSecOps practices to deliver updates more frequently, so change volume was rising while weekly change-board meetings and manual, paper-based approvals couldn’t keep pace. The lack of a formal risk-based approach made it difficult to ensure high-impact changes received adequate scrutiny, while low-risk routine updates were often delayed by one-size-fits-all procedures. Auditors and oversight bodies also raised concerns that the existing process did not fully align with federal IT guidelines such as NIST security controls for configuration change management, and system owners had uneven visibility into upcoming changes — sometimes learning about significant updates only after the fact. Together, these factors made the case for a comprehensive overhaul.',
+        ],
+      },
+      {
+        heading: 'Design Principles for the New Framework',
+        bullets: [
+          'Enterprise-Wide Consistency — Establish one unified policy for all IT change activity, replacing fragmented, team-specific processes so every change follows the same core requirements regardless of department or system.',
+          'Risk-Based Governance — Move from a one-size-fits-all approach to one proportionate to risk: routine, well-understood changes are fast-tracked with minimal overhead, while high-risk changes undergo rigorous review.',
+          'Integration of Security & Compliance — Fully embed security and compliance checkpoints into the change process, so any change affecting security posture triggers a mandatory security impact analysis and sign-off before implementation.',
+          'Separation of Policy from Procedure — Keep the policy document focused on the high-level what and why, while detailed how-to guidance lives in separate process guides and SOPs that can evolve without requiring policy re-approval.',
+          'Transparency and Communication — Give stakeholders early, proactive visibility into planned changes through a central change calendar, with notification lead times scaled to risk.',
+          'Continuous Improvement — Treat the change process itself as a living program, using defined KPIs and a quarterly review cycle to refine risk thresholds, standard-change definitions, and training over time.',
+        ],
+      },
+      {
+        heading: 'Framework Overview',
+        bullets: [
+          'Policy (Governance Document) — A concise, top-level Change Management Policy that states the purpose, scope, and key requirements every change must meet, and defines roles and responsibilities for change governance.',
+          'Process Guides & SOPs — A supporting library of process guides and Standard Operating Procedures that drill into specifics — how to perform a risk assessment, submit a change record, or conduct a post-implementation review — so implementation details can be updated without altering the core policy.',
+          'Risk Model & Change Tiers — A Risk Scoring Matrix evaluates each proposed change across five dimensions: service impact, security impact, user impact, deployment complexity, and cross-system dependencies. The combined score sets the change’s risk tier (Low, Medium, High, or Very High), which in turn drives the approval path, documentation, and notification requirements.',
+          'Change Workflows — Low-risk changes are approved and executed quickly by designated Change Authorities; medium-risk changes add peer review from operations and security but stay asynchronous; high-risk changes convene the Virtual CAB; very-high-risk changes add executive sign-off and longer stakeholder notice.',
+          'Standard vs. Emergency Changes — Low-risk, well-understood changes that meet predefined criteria are pre-approved through a Standard Change Catalog. Emergency changes are strictly redefined and limited to true production emergencies, and still require a post-implementation review within two business days.',
+          'Unified Tooling & Records — Every change is logged in a single system of record with standardized minimum data requirements — description, systems affected, risk assessment, approvals, implementation and rollback plans, and testing evidence — improving audit readiness and institutional memory.',
+          'Communication & Scheduling Controls — A centralized change calendar and standard notification procedure keep stakeholders informed, with lead times scaled to risk tier so business units are never caught off guard by a significant change.',
+        ],
+      },
+      {
+        heading: 'Governance & Operating Model',
+        paragraphs: [
+          'A central innovation of the framework is the shift to a Virtual Change Advisory Board (vCAB) model. Traditional ITIL-style change boards meet in person on a fixed schedule — often weekly — which proved too slow and resource-intensive for a fast-paced IT environment. Under the new model, routine change approvals happen asynchronously through digital workflow approvals, and real-time meetings are reserved for high-stakes changes only.',
+          'The vCAB is not a standing committee but an on-demand virtual meeting of key stakeholders for critical changes: the accountable Change Authority with final approval rights, a Change Manager team that administers the process and coordinates meetings, a security representative for security-critical changes, an operations lead for infrastructure expertise, and the business or product owner of the affected system. For high- or very-high-risk changes, the Change Authority co-chairs the vCAB session and the approval decision becomes a collective one, with escalation to executive leadership for the highest-risk situations. For most low- and medium-risk changes, governance is enforced through automated workflows: reviewers receive tasks to approve or comment, and the system logs their responses as part of the record — reducing administrative burden while preserving rigor where it matters most.',
+        ],
+      },
+      {
+        heading: 'Process & Controls in the New Framework',
+        bullets: [
+          'Submission & Logging — Teams create a change request in the centralized system using a standardized template, with required fields covering the nature of the change, affected systems, proposed timing, expected impact, and preliminary risk factors.',
+          'Risk Assessment — The change is scored against the five-factor Risk Scoring Matrix, producing an automatic risk-tier classification that determines the required approval path.',
+          'Approvals & Review — Required approvers are notified based on risk tier: medium-risk changes need Change Authority and operations/security sign-off; high-risk changes convene a vCAB session where stakeholders discuss and vote. A RACI matrix defines accountability at each stage.',
+          'Pre-Implementation Checks — Before execution, the change owner verifies prerequisites — successful staging tests, stakeholder notifications, and a documented back-out plan — before a deployment window is confirmed.',
+          'Execution & Validation — The assigned implementer carries out the change during its planned window, validates the outcome, and executes the rollback plan if any issue arises.',
+          'Closure & Post-Implementation Review — The change record is updated with the outcome, and significant, problematic, or emergency changes receive a Post-Implementation Review within a couple of days to capture lessons and assign follow-up actions.',
+        ],
+      },
+      {
+        heading: 'Expected Outcomes & Benefits',
+        bullets: [
+          'Increased Change Success Rate & System Reliability — Rigorous up-front review and documentation for high-risk changes are expected to reduce change-related incidents and improve system uptime and stability.',
+          'Faster, More Efficient Delivery of Low-Risk Changes — Pre-approval of standard changes and delegated authority for low-risk scenarios speed up routine updates, cutting approval time from as long as a week to as little as a day for many changes.',
+          'Better Risk Mitigation & Fewer Emergencies — Formal risk assessment surfaces potential issues before deployment, and stricter emergency-change criteria reduce the number of changes executed in fire-fighting mode.',
+          'Improved Transparency and Stakeholder Trust — The change calendar and notification process give stakeholders advance visibility into changes that affect them, and leadership receives regular metrics reporting on change performance.',
+          'Stronger Compliance and Audit Readiness — A single system of record with complete change information makes it straightforward to demonstrate control to auditors, and formal security evaluation reduces the likelihood of compliance gaps.',
+          'Cultural and Organizational Benefits — Clear roles and responsibilities break down silos between applications, operations, and security teams, fostering a culture of accountability and continuous improvement.',
+        ],
+      },
+      {
+        heading: 'Risks and Mitigations',
+        bullets: [
+          'Adoption & Compliance Risk — Teams may initially bypass or only superficially follow the new process. Mitigated through early stakeholder involvement in designing the policy, clear communication of rationale, and enforcement built into the centralized tooling.',
+          'Overhead vs. Agility Trade-off — A risk-based design right-sizes the level of ceremony to each change’s risk, keeping low-risk changes simple and fast while directing rigor where it’s actually needed.',
+          'Tooling and Data Quality Issues — User-friendly forms, pragmatic minimum data requirements, and periodic audits of change records help ensure data quality without overburdening staff.',
+          'Maintaining Momentum and Avoiding Backsliding — A quarterly metrics review cadence and ongoing governance ownership treat the framework as a living program, preventing it from becoming stale after initial rollout.',
+        ],
+      },
+      {
+        heading: 'Applicability & Adoption Guidance',
+        bullets: [
+          'Start with a Diagnostic Review — Build the case for change with evidence: change failure rates, incident causes, and process pain points such as untracked changes or unclear accountability.',
+          'Customize a Risk Model — A five-factor model (impact, security, users, complexity, dependencies) is a solid starting point, but scoring weights should reflect what matters most to the organization’s mission.',
+          'Balance Rigor with Flexibility — Avoid over-engineering, which stifles innovation, and under-engineering, which leads to inconsistency: automate and streamline low-risk changes while remaining unyielding on checks for high-risk ones.',
+          'Invest in Training & Tool Support — Configure tooling to make risk assessment and documentation easy, and train staff on why each control exists, not just how to follow it.',
+          'Executive Sponsorship and Oversight — Strong, sustained leadership support — tied to broader goals like reliability, security, and audit readiness — is critical to maintaining momentum.',
+        ],
+      },
+      {
+        heading: 'Conclusion',
+        paragraphs: [
+          'This change management review led to a modern, risk-aware framework that addresses the shortcomings of a legacy process. By rooting the design in risk management, standardization, and transparency, the organization charted a path to more reliable and responsive IT operations — one expected to reduce unplanned outages, accelerate routine updates, and strengthen stakeholder confidence that technology changes will support mission needs without undermining security or service quality. Other organizations can apply the same lens to their own change processes: manage every change with a level of control proportional to its risk, and continually improve the process itself as technology and business demands evolve.',
+        ],
+      },
     ],
   },
 ]
