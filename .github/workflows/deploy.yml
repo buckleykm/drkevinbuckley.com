@@ -25,6 +25,7 @@ jobs:
           cache: yarn
       - run: yarn install --frozen-lockfile
       - run: yarn build
+      - run: cp dist/index.html dist/404.html
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
