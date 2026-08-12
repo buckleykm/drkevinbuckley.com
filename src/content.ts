@@ -11,6 +11,13 @@ export const profile = {
     'Senior technology and portfolio executive with 15+ years leading technically complex software, cloud, and enterprise application portfolios and Technical Program Management functions. Proven record establishing portfolio management discipline, governance frameworks, Agile/SAFe delivery cadences, reporting rhythms, and data-driven decision support to improve release readiness and reduce execution risk. Experienced with systems engineering and software development lifecycles in matrixed, mission-driven environments; skilled at developing TPMs, influencing senior leaders, and aligning strategy, investment, and talent. PMP- and SAFe-certified leader known for building high-performing teams and maturing delivery operations.',
 }
 
+export const stats: { value: string; label: string }[] = [
+  { value: '$150M', label: 'Portfolio Directed' },
+  { value: '100+', label: 'Applications Governed' },
+  { value: '40%', label: 'Efficiency Gained' },
+  { value: '15+', label: 'Years of Experience' },
+]
+
 export type Role = {
   title: string
   org: string

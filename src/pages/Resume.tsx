@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import {
   profile,
+  stats,
   experience,
   education,
   certifications,
@@ -81,6 +82,25 @@ function TitleSection() {
         </div>
       </nav>
     </header>
+  )
+}
+
+function StatStrip() {
+  return (
+    <div className="border-b border-emerald-100 bg-white">
+      <div className="mx-auto grid max-w-4xl grid-cols-2 gap-8 px-6 py-10 sm:grid-cols-4">
+        {stats.map((stat) => (
+          <div key={stat.label} className="text-center">
+            <div className="text-3xl font-bold tracking-tight text-[#0b2416] sm:text-4xl">
+              {stat.value}
+            </div>
+            <div className="mt-1 text-xs font-medium uppercase tracking-wide text-emerald-700/70 sm:text-sm">
+              {stat.label}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
   )
 }
 
@@ -278,6 +298,7 @@ function Resume() {
   return (
     <div className="min-h-screen bg-white">
       <TitleSection />
+      <StatStrip />
       <About />
       <Experience />
       <Skills />
