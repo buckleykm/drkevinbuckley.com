@@ -182,6 +182,34 @@ export const projects: Project[] = [
     tech: ['Publication', 'Abstract', 'Qualitative Research', 'Talent Retention', 'DEI'],
     link: '/artifacts/women-in-computing-careers',
   },
+  {
+    title: 'Creating IT Value Through Leadership',
+    description:
+      'An article examining how collaborative leadership — as opposed to purely transactional or transformational styles — helps IT organizations create measurable business and social value.',
+    tech: ['Publication', 'Article', 'Leadership', 'IT Value', 'Collaborative Leadership'],
+    link: '/artifacts/creating-it-value-through-leadership',
+  },
+  {
+    title: 'Leadership Is an Art, Management Is a Science',
+    description:
+      "An article exploring former USC president Steven Sample's claim that management is a science but leadership is purely an art, and what separates process-focused management from people-focused leadership.",
+    tech: ['Publication', 'Article', 'Leadership', 'Management Theory'],
+    link: '/artifacts/leadership-is-an-art',
+  },
+  {
+    title: 'Information Technology and Organizational Performance',
+    description:
+      "An article on how IT contributes to organizational performance through efficiency and effectiveness, and a five-metric scorecard for connecting IT investment to business outcomes.",
+    tech: ['Publication', 'Article', 'IT Strategy', 'Organizational Performance', 'IT Metrics'],
+    link: '/artifacts/it-and-organizational-performance',
+  },
+  {
+    title: 'Overcoming Organizational Resistance to Change',
+    description:
+      "An article examining the individual and organizational sources of resistance to change, evaluating Lewin's and Kotter's change models, and identifying gaps in how change readiness is typically assessed.",
+    tech: ['Publication', 'Article', 'Change Management', 'Organizational Behavior'],
+    link: '/artifacts/overcoming-organizational-resistance-to-change',
+  },
 ]
 
 export type Artifact = {
@@ -358,6 +386,79 @@ export const artifacts: Artifact[] = [
       'women in technology',
       'gender balance in computing',
       'diversity in computing',
+    ],
+  },
+  {
+    slug: 'creating-it-value-through-leadership',
+    title: 'Publication: Creating IT Value Through Leadership',
+    tagline:
+      'How collaborative leadership styles can help IT organizations create measurable value, not just deliver technology.',
+    summary:
+      'An article examining how collaborative leadership — as opposed to purely transactional or transformational styles — helps IT organizations create measurable business and social value.',
+    tags: ['Publication', 'Article', 'Leadership', 'IT Value', 'Collaborative Leadership'],
+    meta: 'Article · Originally published July 27, 2017',
+    abstract: [
+      'The concept of creating value is not unique to the IT industry. Porter and Kramer (2006) framed value creation as a way for organizations to look beyond the traditional producer/consumer relationship and consider their broader impact on society. This article explores how collaborative leadership — rather than purely transactional or transformational approaches — can help IT organizations translate that broader idea of value creation into practice.',
+      'Transactional leadership rewards task completion but risks follower disengagement, while transformational leadership empowers followers but depends on highly motivated, capable teams. Collaborative leadership, by contrast, embraces input from cross-functional teams, ad-hoc groups, and third-party vendors rather than resisting these non-traditional influences — a fit for organizations shaped by social networks and the growing expectation that employees contribute to, not just execute, strategy.',
+      "IT itself has long been a source of competitive advantage, from improving how organizations process information to spawning entirely new business opportunities out of internally built tools. The article argues that pairing that technical potential with a collaborative leadership style — one that taps into employees' need to contribute and be heard — produces faster problem-solving, higher morale, and better retention, particularly among younger employees who actively seek collaborative environments.",
+    ],
+    keywords: [
+      'collaborative leadership',
+      'IT value creation',
+      'transformational leadership',
+      'organizational behavior',
+    ],
+  },
+  {
+    slug: 'leadership-is-an-art',
+    title: 'Publication: Leadership Is an Art, Management Is a Science',
+    tagline:
+      'Why treating leadership and management as the same discipline undersells both — and what separates a great leader from a great manager.',
+    summary:
+      "An article exploring former USC president Steven Sample's claim that management is a science but leadership is purely an art, and what separates process-focused management from people-focused leadership.",
+    tags: ['Publication', 'Article', 'Leadership', 'Management Theory'],
+    meta: 'Article · Originally published July 15, 2016',
+    abstract: [
+      'Former USC president Steven Sample once wrote that "leadership is an art, not a science. Effective management may be a science…but effective leadership is purely an art." This article examines that distinction, drawing on Kotter\'s (1990) framing of management as process-centric work — planning, budgeting, organizing, staffing, controlling — versus leadership as people-centric work: establishing direction, aligning people, motivating, and inspiring.',
+      'The core argument is that management tasks are process-focused and can be accomplished through established, repeatable methods, while leadership deals with people — who are inherently less predictable. That unpredictability is where the "art" in leadership lives: a great leader reads the situational context and adjusts their strategy accordingly, rather than applying a fixed process regardless of circumstance.',
+    ],
+    keywords: ['leadership vs management', 'leadership theory', 'Steven Sample', 'John Kotter'],
+  },
+  {
+    slug: 'it-and-organizational-performance',
+    title: 'Publication: Information Technology and Organizational Performance',
+    tagline:
+      'How IT investment translates into measurable organizational performance — and the metrics that prove it.',
+    summary:
+      'An article on how IT contributes to organizational performance through efficiency and effectiveness, and a five-metric scorecard for connecting IT investment to business outcomes.',
+    tags: ['Publication', 'Article', 'IT Strategy', 'Organizational Performance', 'IT Metrics'],
+    meta: 'Article · Originally published August 10, 2017',
+    abstract: [
+      "There is no shortage of research linking IT investment to organizational performance, whether measured through financial results or increased business process agility. This article synthesizes that literature, categorizing IT's contribution to organizations into two buckets: efficiency and effectiveness, and surveys practical tools — from networking and knowledge management to financial tracking applications — that IT leaders can use to drive both.",
+      'The article also presents a five-metric IT performance scorecard adapted from Symons et al. (2008): alignment of IT investment to business strategy, the cumulative business value of IT investment, the IT spend ratio between new initiatives and maintenance, critical business service availability, and operational health. Together, these metrics translate IT performance into terms business executives can understand and act on — connecting technical execution directly to business outcomes rather than treating IT as a cost center measured in isolation.',
+    ],
+    keywords: ['IT business value', 'IT performance metrics', 'IT strategy', 'organizational performance'],
+  },
+  {
+    slug: 'overcoming-organizational-resistance-to-change',
+    title: 'Publication: Overcoming Organizational Resistance to Change',
+    tagline:
+      "Why change management methodologies like Lewin's and Kotter's models address resistance indirectly — and what the research still gets wrong about it.",
+    summary:
+      "An article examining the individual and organizational sources of resistance to change, evaluating Lewin's and Kotter's change models, and identifying gaps in how change readiness is typically assessed.",
+    tags: ['Publication', 'Article', 'Change Management', 'Organizational Behavior'],
+    meta: 'Article · Originally published March 14, 2016',
+    abstract: [
+      "The purpose of this article is to discuss the contributing factors to organizational change resistance. It introduces the resistance categories of individual and organizational change resistance, as well as whether proposed changes are planned or unplanned (emergent), and presents two methodologies for successfully implementing change: Lewin's three-step model (unfreeze, change, refreeze) and Kotter's eight-step model.",
+      "Both methodologies address change resistance indirectly rather than by design — Kotter's model, for example, addresses it through removing barriers to change and proactively building systems and teams that align with it. The article argues that no single activity can fully mitigate organizational change resistance; successful implementation instead requires a change readiness assessment that accounts for individual, group, and organizational-level factors.",
+      'Finally, the article identifies two gaps in the existing change management literature: the limited understanding of how emotions affect change readiness, and the lack of a multilevel perspective — individual, work group, and organizational — when assessing whether an organization is truly ready for a proposed change.',
+    ],
+    keywords: [
+      'organizational change',
+      'change resistance',
+      'change management',
+      "Kotter's eight-step model",
+      "Lewin's three-step model",
     ],
   },
 ]
