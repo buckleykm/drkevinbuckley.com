@@ -22,6 +22,7 @@ const bulletAnchorIds: { match: string; id: string }[] = [
   { match: 'efficiency by 40%', id: 'stat-efficiency' },
   { match: '$150M technology contract portfolio', id: 'stat-portfolio' },
   { match: '100+ deployable code units', id: 'stat-code-units' },
+  { match: '700+ contractors', id: 'stat-contractors' },
 ]
 
 const sectionNav = [

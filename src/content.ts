@@ -16,7 +16,7 @@ export const stats: { value: string; label: string; anchorId?: string }[] = [
   { value: '$150M', label: 'Portfolio Directed', anchorId: 'stat-portfolio' },
   { value: '100+', label: 'Deployable Code Units Governed', anchorId: 'stat-code-units' },
   { value: '40%', label: 'Efficiency Gained', anchorId: 'stat-efficiency' },
-  { value: '15+', label: 'Years of Experience' },
+  { value: '700+', label: 'Contractors Coordinated', anchorId: 'stat-contractors' },
 ]
 
 export type Role = {
