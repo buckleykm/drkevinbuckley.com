@@ -172,7 +172,7 @@ export const projects: Project[] = [
     title: 'Value-Driven IT Portfolio Valuation',
     description:
       'A repeatable scoring framework that ranks an entire IT portfolio by measurable mission value versus cost and technical debt, turning modernization prioritization into an evidence-based decision instead of a guess.',
-    tech: ['Portfolio Valuation', 'Cost of Delay', 'WSJF', 'ISO 21504'],
+    tech: ['Case Study', 'Portfolio Valuation', 'Cost of Delay', 'WSJF', 'ISO 21504'],
     link: '/artifacts/value-management',
   },
   {
@@ -212,11 +212,11 @@ export type Artifact = {
 export const artifacts: Artifact[] = [
   {
     slug: 'value-management',
-    title: 'Value-Driven IT Portfolio Valuation',
+    title: 'Case Study: Value-Driven IT Portfolio Valuation',
     tagline: 'A repeatable scoring framework for prioritizing IT investment by measurable mission value, not gut feel.',
     summary:
       'A repeatable scoring framework that ranks an entire IT portfolio by measurable mission value versus cost and technical debt, turning modernization prioritization into an evidence-based decision instead of a guess.',
-    tags: ['Portfolio Valuation', 'Cost of Delay', 'WSJF', 'ISO 21504'],
+    tags: ['Case Study', 'Portfolio Valuation', 'Cost of Delay', 'WSJF', 'ISO 21504'],
     challenge: [
       'Public-sector agencies often struggle to prioritize IT investment and legacy modernization in a rational, transparent way. Traditional prioritization methods — subjective judgment, "gut feelings," or simplistic measures like level of effort or story points — frequently fail to capture how work actually impacts service outcomes or what the true cost of delay is.',
       'Without clear insight into which systems deliver the most value, major investment decisions end up driven by the loudest voice or the most urgent technical fire rather than strategic mission value — and organizations risk pouring resources into low-impact initiatives while higher-value opportunities wait.',
