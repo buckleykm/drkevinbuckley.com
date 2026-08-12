@@ -89,16 +89,27 @@ function StatStrip() {
   return (
     <div className="border-b border-emerald-100 bg-white">
       <div className="mx-auto grid max-w-4xl grid-cols-2 gap-8 px-6 py-10 sm:grid-cols-4">
-        {stats.map((stat) => (
-          <div key={stat.label} className="text-center">
-            <div className="text-3xl font-bold tracking-tight text-[#0b2416] sm:text-4xl">
-              {stat.value}
+        {stats.map((stat) => {
+          const content = (
+            <>
+              <div className="text-3xl font-bold tracking-tight text-[#0b2416] sm:text-4xl">
+                {stat.value}
+              </div>
+              <div className="mt-1 text-xs font-medium uppercase tracking-wide text-emerald-700/70 sm:text-sm">
+                {stat.label}
+              </div>
+            </>
+          )
+          return stat.anchorId ? (
+            <a key={stat.label} href={`#${stat.anchorId}`} className="text-center hover:opacity-70">
+              {content}
+            </a>
+          ) : (
+            <div key={stat.label} className="text-center">
+              {content}
             </div>
-            <div className="mt-1 text-xs font-medium uppercase tracking-wide text-emerald-700/70 sm:text-sm">
-              {stat.label}
-            </div>
-          </div>
-        ))}
+          )
+        })}
       </div>
     </div>
   )
@@ -106,7 +117,7 @@ function StatStrip() {
 
 function About() {
   return (
-    <section id="about" className="mx-auto max-w-4xl scroll-mt-[220px] px-6 py-16">
+    <section id="about" className="mx-auto max-w-4xl scroll-mt-[280px] px-6 py-16">
       <SectionHeading>Summary</SectionHeading>
       <p className="mt-4 leading-relaxed text-slate-600">{profile.summary}</p>
     </section>
@@ -115,7 +126,7 @@ function About() {
 
 function Experience() {
   return (
-    <section id="experience" className="scroll-mt-[220px] border-t border-emerald-100 bg-emerald-50/40">
+    <section id="experience" className="scroll-mt-[280px] border-t border-emerald-100 bg-emerald-50/40">
       <div className="mx-auto max-w-4xl px-6 py-16">
         <SectionHeading>Experience</SectionHeading>
         <div className="mt-8 space-y-10">
@@ -133,9 +144,18 @@ function Experience() {
                 {role.org} · {role.location}
               </p>
               <ul className="mt-3 list-disc space-y-2 pl-5 text-slate-600">
-                {role.bullets.map((bullet) => (
-                  <li key={bullet}>{bullet}</li>
-                ))}
+                {role.bullets.map((bullet) => {
+                  const isEfficiencyStat = bullet.includes('efficiency by 40%')
+                  return (
+                    <li
+                      key={bullet}
+                      id={isEfficiencyStat ? 'stat-efficiency' : undefined}
+                      className={isEfficiencyStat ? 'scroll-mt-[280px]' : undefined}
+                    >
+                      {bullet}
+                    </li>
+                  )
+                })}
               </ul>
             </article>
           ))}
@@ -147,7 +167,7 @@ function Experience() {
 
 function Skills() {
   return (
-    <section id="skills" className="mx-auto max-w-4xl scroll-mt-[220px] px-6 py-16">
+    <section id="skills" className="mx-auto max-w-4xl scroll-mt-[280px] px-6 py-16">
       <SectionHeading>Skills</SectionHeading>
       <div className="mt-8 grid gap-8 sm:grid-cols-2">
         {skillGroups.map((group) => (
@@ -172,7 +192,7 @@ function Skills() {
 
 function Projects() {
   return (
-    <section id="projects" className="scroll-mt-[220px] border-t border-emerald-100 bg-emerald-50/40">
+    <section id="projects" className="scroll-mt-[280px] border-t border-emerald-100 bg-emerald-50/40">
       <div className="mx-auto max-w-4xl px-6 py-16">
         <SectionHeading>Projects &amp; Artifacts</SectionHeading>
         <p className="mt-2 text-sm text-emerald-700/70">
@@ -229,7 +249,7 @@ function Projects() {
 
 function EducationSection() {
   return (
-    <section id="education" className="mx-auto max-w-4xl scroll-mt-[220px] px-6 py-16">
+    <section id="education" className="mx-auto max-w-4xl scroll-mt-[280px] px-6 py-16">
       <SectionHeading>Education &amp; Certifications</SectionHeading>
       <div className="mt-8 grid gap-8 sm:grid-cols-2">
         <div>
@@ -261,7 +281,7 @@ function EducationSection() {
 
 function Contact() {
   return (
-    <footer id="contact" className="scroll-mt-[220px] border-t border-emerald-900 bg-[#0b2416] text-white">
+    <footer id="contact" className="scroll-mt-[280px] border-t border-emerald-900 bg-[#0b2416] text-white">
       <div className="mx-auto max-w-4xl px-6 py-16 text-center">
         <h2 className="text-2xl font-semibold tracking-tight text-white sm:text-3xl">
           Get in touch
