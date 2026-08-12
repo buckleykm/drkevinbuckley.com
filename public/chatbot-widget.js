@@ -25,7 +25,7 @@ window.RAG_CHATBOT_CONFIG = {
  * USAGE:
  *   <script>
  *     window.RAG_CHATBOT_CONFIG = {
- *       apiEndpoint: ' https://kb-chat-worker.buckleykm.workers.dev',
+ *       apiEndpoint: ' https://kb-chat-worker.buckleykm.workers.dev/chat',
  *       name: 'Your Name',
  *       greeting: 'Hi! Ask me anything about [Your Name].',
  *       suggestedQuestions: [
