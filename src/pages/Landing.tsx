@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { profile } from '../content'
 
 const navItems = [
@@ -8,6 +9,8 @@ const navItems = [
 ]
 
 function Landing() {
+  const [menuOpen, setMenuOpen] = useState(false)
+
   return (
     <div
       className="relative min-h-screen overflow-hidden text-[#dff5e8]"
@@ -49,7 +52,41 @@ function Landing() {
             </a>
           ))}
         </nav>
+
+        <button
+          type="button"
+          onClick={() => setMenuOpen((open) => !open)}
+          className="flex h-9 w-9 flex-col items-center justify-center gap-1.5 sm:hidden"
+          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={menuOpen}
+        >
+          <span
+            className={`h-[2px] w-6 bg-[#dff5e8] transition-transform ${menuOpen ? 'translate-y-[7px] rotate-45' : ''}`}
+          />
+          <span
+            className={`h-[2px] w-6 bg-[#dff5e8] transition-opacity ${menuOpen ? 'opacity-0' : ''}`}
+          />
+          <span
+            className={`h-[2px] w-6 bg-[#dff5e8] transition-transform ${menuOpen ? '-translate-y-[7px] -rotate-45' : ''}`}
+          />
+        </button>
       </div>
+
+      {menuOpen && (
+        <nav className="flex flex-col border-t border-white/10 px-6 py-4 sm:hidden">
+          {navItems.map((item) => (
+            <a
+              key={item.label}
+              href={item.href}
+              onClick={() => setMenuOpen(false)}
+              className="flex items-baseline gap-3 border-b border-white/10 py-3 text-sm font-semibold tracking-[2px] text-[#dff5e8] last:border-b-0 hover:text-white"
+            >
+              <span className="text-[#34e0a1]">{item.num}</span>
+              {item.label}
+            </a>
+          ))}
+        </nav>
+      )}
 
       {/* hero */}
       <div className="mx-auto flex max-w-7xl flex-col items-center gap-12 px-6 pb-24 pt-6 sm:px-10 lg:flex-row lg:items-center lg:justify-center lg:gap-16 lg:px-16 lg:py-20 xl:gap-24 xl:px-24">
@@ -78,8 +115,7 @@ function Landing() {
             <div className="mx-auto h-[3px] w-[70px] bg-[#34e0a1] lg:mx-0 lg:ml-auto" />
             <h1 className="mt-5 font-black uppercase leading-[0.86] tracking-tight">
               <span
-                className="block text-[56px] text-transparent sm:text-[80px] lg:text-[100px] xl:text-[118px]"
-                style={{ WebkitTextStroke: '2px #3a6b52' }}
+                className="block text-[56px] text-transparent [-webkit-text-stroke:1.25px_#3a6b52] [text-stroke:1.25px_#3a6b52] sm:text-[80px] sm:[-webkit-text-stroke:2px_#3a6b52] sm:[text-stroke:2px_#3a6b52] lg:text-[100px] xl:text-[118px]"
               >
                 KEVIN
               </span>

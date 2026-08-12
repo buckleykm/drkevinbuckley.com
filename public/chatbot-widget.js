@@ -367,6 +367,10 @@ window.RAG_CHATBOT_CONFIG = {
     text-decoration: none;
   }
   .rag-chatbot-attribution:hover { color: #888; }
+
+  @media (max-width: 480px) {
+    .rag-chatbot-bubble-label { display: none; }
+  }
     `;
     document.head.appendChild(style);
   }
