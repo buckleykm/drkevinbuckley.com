@@ -52,7 +52,7 @@ function Landing() {
       </div>
 
       {/* hero */}
-      <div className="flex flex-col items-center gap-12 px-6 pb-24 pt-6 sm:px-10 lg:flex-row lg:items-center lg:justify-between lg:gap-8 lg:py-20">
+      <div className="mx-auto flex max-w-7xl flex-col items-center gap-12 px-6 pb-24 pt-6 sm:px-10 lg:flex-row lg:items-center lg:justify-center lg:gap-16 lg:px-16 lg:py-20 xl:gap-24 xl:px-24">
         <div className="relative w-[240px] shrink-0 sm:w-[340px] lg:w-[420px] xl:w-[480px]">
           <div className="absolute -inset-4 rounded-full border border-white/15 sm:-inset-6" />
           <div
@@ -72,6 +72,9 @@ function Landing() {
 
         <div className="flex items-center gap-3 text-center lg:gap-6 lg:text-right">
           <div className="order-2 max-w-xl lg:order-1">
+            <div className="mb-3 text-sm font-light uppercase tracking-[8px] text-[#6f9a82] lg:hidden">
+              DOCTOR
+            </div>
             <div className="mx-auto h-[3px] w-[70px] bg-[#34e0a1] lg:mx-0 lg:ml-auto" />
             <h1 className="mt-5 font-black uppercase leading-[0.86] tracking-tight">
               <span
