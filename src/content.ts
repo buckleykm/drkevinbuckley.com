@@ -175,20 +175,6 @@ export const projects: Project[] = [
     tech: ['Case Study', 'Portfolio Valuation', 'Cost of Delay', 'WSJF', 'ISO 21504'],
     link: '/artifacts/value-management',
   },
-  {
-    title: 'Artifact Placeholder',
-    description:
-      'Add a second artifact: a presentation, whitepaper, dashboard, or process you designed. Link to a PDF, deck, or write-up if you have one.',
-    tech: ['Replace', 'With', 'Real Tags'],
-    placeholder: true,
-  },
-  {
-    title: 'Artifact Placeholder',
-    description:
-      'A third slot for a project, publication, or talk. Delete this card if you only have two to show.',
-    tech: ['Replace', 'With', 'Real Tags'],
-    placeholder: true,
-  },
 ]
 
 export type Artifact = {

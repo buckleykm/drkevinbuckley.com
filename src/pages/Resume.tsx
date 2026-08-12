@@ -206,12 +206,7 @@ function Projects() {
       <div className="mx-auto max-w-4xl px-6 py-16">
         <SectionHeading>Projects &amp; Artifacts</SectionHeading>
         <p className="mt-2 text-sm text-emerald-700/70">
-          Selected artifacts below, with more to come — remaining
-          placeholder cards can be filled in via{' '}
-          <code className="rounded bg-emerald-100/70 px-1 py-0.5 text-emerald-800">
-            src/content.ts
-          </code>
-          .
+          Selected artifacts below, with more to come.
         </p>
         <div className="mt-8 grid gap-6 sm:grid-cols-2">
           {projects.map((project) => (
