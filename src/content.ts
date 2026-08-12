@@ -175,6 +175,13 @@ export const projects: Project[] = [
     tech: ['Case Study', 'Portfolio Valuation', 'Cost of Delay', 'WSJF', 'ISO 21504'],
     link: '/artifacts/value-management',
   },
+  {
+    title: 'Women in Computing Careers',
+    description:
+      'A qualitative research study identifying eleven strategies technology managers can use to improve the engagement and retention of women in computing careers.',
+    tech: ['Publication', 'Abstract', 'Qualitative Research', 'Talent Retention', 'DEI'],
+    link: '/artifacts/women-in-computing-careers',
+  },
 ]
 
 export type Artifact = {
@@ -183,16 +190,21 @@ export type Artifact = {
   tagline: string
   summary: string
   tags: string[]
-  challenge: string[]
-  solutionIntro: string[]
-  netProductValueCallout: string
-  valueFactors: { factor: string; description: string }[]
-  costFactors: { factor: string; description: string }[]
-  process: { step: string; description: string }[]
-  resultsIntro: string[]
-  resultStats: { value: string; label: string }[]
-  benefits: { title: string; description: string }[]
-  closing: string
+  meta?: string
+  // Case-study fields (optional — used by framework/case-study artifacts).
+  challenge?: string[]
+  solutionIntro?: string[]
+  netProductValueCallout?: string
+  valueFactors?: { factor: string; description: string }[]
+  costFactors?: { factor: string; description: string }[]
+  process?: { step: string; description: string }[]
+  resultsIntro?: string[]
+  resultStats?: { value: string; label: string }[]
+  benefits?: { title: string; description: string }[]
+  closing?: string
+  // Publication fields (optional — used by paper/dissertation artifacts).
+  abstract?: string[]
+  keywords?: string[]
 }
 
 export const artifacts: Artifact[] = [
@@ -325,5 +337,27 @@ export const artifacts: Artifact[] = [
     ],
     closing:
       'This approach isn’t tied to any one organization’s structure or tooling — it’s a flexible framework any portfolio leader can adapt by tailoring the value and cost factors to their own mission and data availability. Even a first, imperfect pass at scoring beats first-come-first-served or politically driven prioritization. In an environment where the cost of doing nothing often exceeds the cost of change, having a clear view of each investment’s true net value and urgency is what turns a legacy-bound portfolio into a modernization roadmap that delivers real value.',
+  },
+  {
+    slug: 'women-in-computing-careers',
+    title:
+      'Publication: Women in Computing Careers — Discovering the Factors That Attract and Retain Them: A Qualitative Research Study',
+    tagline:
+      'Doctoral dissertation research identifying eleven strategies technology managers can use to improve the engagement and retention of women in computing careers.',
+    summary:
+      'A qualitative research study identifying eleven strategies technology managers can use to improve the engagement and retention of women in computing careers.',
+    tags: ['Publication', 'Abstract', 'Qualitative Research', 'Talent Retention', 'DEI'],
+    meta: 'Doctor of Management Dissertation · Colorado Technical University · 2019',
+    abstract: [
+      'Despite the increasing number of women entering into science, technology, engineering, and math occupations, the number of women entering computing occupations has drastically fallen since the early 1990s (National Center for Women in Technology, 2014). The purpose of this study was to explore strategies that technology managers can use to retain women in the computing industry.',
+      'The study conducted was a qualitative exploratory study that was designed to develop strategies that technology managers could use to retain female computing professionals and realized the benefits of a gender diverse team. Data collection occurred using semi-structured interviews, which were analyzed and synthesized to derive conclusions.',
+      'The findings of this study largely corroborated key elements of the existing literature and led to the identification of eleven strategies for use by technology managers to help improve the engagement and retention levels of female computing professionals.',
+    ],
+    keywords: [
+      'women in computing',
+      'women in technology',
+      'gender balance in computing',
+      'diversity in computing',
+    ],
   },
 ]
