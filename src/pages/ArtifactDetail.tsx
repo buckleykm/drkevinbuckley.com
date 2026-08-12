@@ -170,9 +170,11 @@ function ArtifactDetail() {
         </>
       ) : (
         <section className="mx-auto max-w-3xl px-6 py-14">
-          <h2 className="text-xl font-semibold tracking-tight text-[#0b2416] sm:text-2xl">
-            Abstract
-          </h2>
+          {(artifact.abstractHeading ?? 'Abstract') !== '' && (
+            <h2 className="text-xl font-semibold tracking-tight text-[#0b2416] sm:text-2xl">
+              {artifact.abstractHeading ?? 'Abstract'}
+            </h2>
+          )}
           <div className="mt-4 space-y-4 leading-relaxed text-slate-600">
             {artifact.abstract!.map((p) => (
               <p key={p}>{p}</p>
@@ -194,6 +196,19 @@ function ArtifactDetail() {
                   </span>
                 ))}
               </div>
+            </div>
+          )}
+
+          {artifact.references && (
+            <div className="mt-10">
+              <h3 className="text-sm font-semibold uppercase tracking-wide text-emerald-700">
+                References
+              </h3>
+              <ol className="mt-3 space-y-2 text-sm leading-relaxed text-slate-600">
+                {artifact.references.map((ref) => (
+                  <li key={ref}>{ref}</li>
+                ))}
+              </ol>
             </div>
           )}
         </section>

@@ -232,7 +232,11 @@ export type Artifact = {
   closing?: string
   // Publication fields (optional — used by paper/dissertation artifacts).
   abstract?: string[]
+  // Heading shown above the abstract paragraphs. Defaults to "Abstract" when
+  // omitted; pass '' to render the paragraphs with no heading above them.
+  abstractHeading?: string
   keywords?: string[]
+  references?: string[]
 }
 
 export const artifacts: Artifact[] = [
@@ -397,6 +401,7 @@ export const artifacts: Artifact[] = [
       'An article examining how collaborative leadership — as opposed to purely transactional or transformational styles — helps IT organizations create measurable business and social value.',
     tags: ['Publication', 'Article', 'Leadership', 'IT Value', 'Collaborative Leadership'],
     meta: 'Article · Originally published July 27, 2017',
+    abstractHeading: '',
     abstract: [
       'The concept of creating value is not unique to the IT industry. Porter and Kramer (2006) framed value creation as a way for organizations to look beyond the traditional producer/consumer relationship and consider their broader impact on society. This article explores how collaborative leadership — rather than purely transactional or transformational approaches — can help IT organizations translate that broader idea of value creation into practice.',
       'Transactional leadership rewards task completion but risks follower disengagement, while transformational leadership empowers followers but depends on highly motivated, capable teams. Collaborative leadership, by contrast, embraces input from cross-functional teams, ad-hoc groups, and third-party vendors rather than resisting these non-traditional influences — a fit for organizations shaped by social networks and the growing expectation that employees contribute to, not just execute, strategy.',
@@ -408,6 +413,14 @@ export const artifacts: Artifact[] = [
       'transformational leadership',
       'organizational behavior',
     ],
+    references: [
+      'Porter, M. E., & Kramer, M. R. (2006). Strategy and society: The link between competitive advantage and corporate social responsibility. Harvard Business Review, December 2006.',
+      'Porter, M. E., & Millar, V. E. (1985). How information gives you competitive advantage. Harvard Business Review (July 1985).',
+      'Robbins, S. P., & Judge, T. A. (2015). Organizational behavior (16th ed.). Pearson.',
+      'Sant, P., & Catania, G. (2014). The growing web of influence of social networking sites on interpersonal relationships. International Journal of Arts & Sciences, 7(5), 719-734.',
+      'Wander, F. (2013). Transforming IT culture: How to use social intelligence, human factors and collaboration to create an IT department that outperforms (Vol. 580). John Wiley & Sons.',
+      'Willis, S. (2015). The very real benefits of collaborative leadership. Retrieved from http://switchandshift.com/the-very-real-benefits-of-collaborative-leadership',
+    ],
   },
   {
     slug: 'leadership-is-an-art',
@@ -418,11 +431,19 @@ export const artifacts: Artifact[] = [
       "An article exploring former USC president Steven Sample's claim that management is a science but leadership is purely an art, and what separates process-focused management from people-focused leadership.",
     tags: ['Publication', 'Article', 'Leadership', 'Management Theory'],
     meta: 'Article · Originally published July 15, 2016',
+    abstractHeading: '',
     abstract: [
       'Former USC president Steven Sample once wrote that "leadership is an art, not a science. Effective management may be a science…but effective leadership is purely an art." This article examines that distinction, drawing on Kotter\'s (1990) framing of management as process-centric work — planning, budgeting, organizing, staffing, controlling — versus leadership as people-centric work: establishing direction, aligning people, motivating, and inspiring.',
       'The core argument is that management tasks are process-focused and can be accomplished through established, repeatable methods, while leadership deals with people — who are inherently less predictable. That unpredictability is where the "art" in leadership lives: a great leader reads the situational context and adjusts their strategy accordingly, rather than applying a fixed process regardless of circumstance.',
     ],
     keywords: ['leadership vs management', 'leadership theory', 'Steven Sample', 'John Kotter'],
+    references: [
+      'Bennis, W., Sample, S. B., & Asghar, R. (2015). The art and adventure of leadership: Understanding failure, resilience and success. John Wiley & Sons.',
+      'Kotter, J. P. (1990). A force for change: How leadership differs from management.',
+      'Northouse, P. G. (2015). Leadership: Theory and practice (7th ed.). Sage Publications.',
+      "Sample, S. B., & Bennis, W. (2002). The contrarian's guide to leadership. Jossey-Bass San Francisco.",
+      'Zaleznik, A. (1977). Managers and leaders: Are they different.',
+    ],
   },
   {
     slug: 'it-and-organizational-performance',
@@ -433,11 +454,20 @@ export const artifacts: Artifact[] = [
       'An article on how IT contributes to organizational performance through efficiency and effectiveness, and a five-metric scorecard for connecting IT investment to business outcomes.',
     tags: ['Publication', 'Article', 'IT Strategy', 'Organizational Performance', 'IT Metrics'],
     meta: 'Article · Originally published August 10, 2017',
+    abstractHeading: '',
     abstract: [
       "There is no shortage of research linking IT investment to organizational performance, whether measured through financial results or increased business process agility. This article synthesizes that literature, categorizing IT's contribution to organizations into two buckets: efficiency and effectiveness, and surveys practical tools — from networking and knowledge management to financial tracking applications — that IT leaders can use to drive both.",
       'The article also presents a five-metric IT performance scorecard adapted from Symons et al. (2008): alignment of IT investment to business strategy, the cumulative business value of IT investment, the IT spend ratio between new initiatives and maintenance, critical business service availability, and operational health. Together, these metrics translate IT performance into terms business executives can understand and act on — connecting technical execution directly to business outcomes rather than treating IT as a cost center measured in isolation.',
     ],
     keywords: ['IT business value', 'IT performance metrics', 'IT strategy', 'organizational performance'],
+    references: [
+      'Chen, Y., Wang, Y., Nevo, S., Jin, J., Wang, L., & Chow, W. S. (2014). IT capability and organizational performance: The roles of business process agility and environmental factors. European Journal of Information Systems, 23(3), 326-342.',
+      'Melville, N., Kraemer, K., & Gurbaxani, V. (2004). Information technology and organizational performance: An integrative model of IT business value. MIS Quarterly, 28(2), 283-322.',
+      'Mouawad, F. (2015). 5 ways technology can improve productivity at work. Retrieved from http://fredmouawad.com/5-ways-technology-can-improve-productivity-at-work/',
+      'Ronan, B. (2015). 12 critical metrics for IT success. Retrieved from http://www.cio.com/article/2955777/best-practices/12-critical-metrics-for-it-success.html',
+      'Stoel, M. D., & Muhanna, W. A. (2009). IT capabilities and firm performance: A contingency analysis of the role of industry and IT capability type. Information & Management, 46(3), 181-189.',
+      'Symons, C., Peters, A., Cullen, A., & Worthington, B. (2008). The five essential metrics for managing IT. Retrieved from https://vitalvoiceanddata.com/wp-content/uploads/2012/01/Essential-Metrics-for-Measuring-IT.pdf',
+    ],
   },
   {
     slug: 'overcoming-organizational-resistance-to-change',
@@ -448,6 +478,7 @@ export const artifacts: Artifact[] = [
       "An article examining the individual and organizational sources of resistance to change, evaluating Lewin's and Kotter's change models, and identifying gaps in how change readiness is typically assessed.",
     tags: ['Publication', 'Article', 'Change Management', 'Organizational Behavior'],
     meta: 'Article · Originally published March 14, 2016',
+    abstractHeading: '',
     abstract: [
       "The purpose of this article is to discuss the contributing factors to organizational change resistance. It introduces the resistance categories of individual and organizational change resistance, as well as whether proposed changes are planned or unplanned (emergent), and presents two methodologies for successfully implementing change: Lewin's three-step model (unfreeze, change, refreeze) and Kotter's eight-step model.",
       "Both methodologies address change resistance indirectly rather than by design — Kotter's model, for example, addresses it through removing barriers to change and proactively building systems and teams that align with it. The article argues that no single activity can fully mitigate organizational change resistance; successful implementation instead requires a change readiness assessment that accounts for individual, group, and organizational-level factors.",
@@ -459,6 +490,26 @@ export const artifacts: Artifact[] = [
       'change management',
       "Kotter's eight-step model",
       "Lewin's three-step model",
+    ],
+    references: [
+      'Alasadi, R., & Askary, S. (2014). Employee involvement and the barriers to organizational change. International Journal of Information, Business and Management, 6(1), 29-51.',
+      "Armenakis, A. A., Bernerth, J. B., Pitts, J. P., & Walker, H. J. (2007). Organizational change recipients' beliefs scale: Development of an assessment instrument. The Journal of Applied Behavioral Science, 43(4), 481-505.",
+      'Armenakis, A. A., Harris, S. G., & Mossholder, K. W. (1993). Creating readiness for organizational change. Human Relations, 46(6), 681-703.',
+      'Battilana, J., & Casciaro, T. (2013). Overcoming resistance to organizational change: Strong ties and affective cooptation. Management Science, 59(4), 819-836.',
+      'Beer, M., & Nohria, N. (2000). Cracking the code of change. If you read nothing else on change, read these best-selling articles, 15.',
+      'Cervone, H. F. (2011). Overcoming resistance to change in digital library projects. OCLC Systems and Services, 27(2), 95-98.',
+      'Crites, S. L., Fabrigar, L. R., & Petty, R. E. (1994). Measuring the affective and cognitive properties of attitudes: Conceptual and methodological issues. Personality and Social Psychology Bulletin, 20(6), 619-634.',
+      'Downs, A. (2012). Resistance to change as a positive influencer: An introduction. Journal of Organizational Change Management, 25(6).',
+      'Ford, J. D., & Ford, L. W. (2010). Stop blaming resistance to change and start using it. Organizational Dynamics, 39(1), 24-36.',
+      'Georgalis, J., Samaratunge, R., Kimberley, N., & Lu, Y. (2015). Change process characteristics and resistance to organizational change: The role of employee perceptions of justice. Australian Journal of Management, 40(1), 89-113.',
+      'Gonçalves, J. M., & Gonçalves, R. P. d. S. (2012). Overcoming resistance to changes in information technology organizations. Procedia Technology, 5, 293-301.',
+      'Hughes, M. (2011). Do 70 per cent of all organizational change initiatives really fail? Journal of Change Management, 11(4), 451-464.',
+      'Kotter, J. (2015). The 8-step process for leading change. Kotter International.',
+      'Kotter, J. P. (1996). Leading change. Harvard Business Press.',
+      'Lewin, K. (1947). Frontiers in group dynamics II. Channels of group life; social planning and action research. Human Relations, 1(2), 143-153.',
+      'McKay, K., Kuntz, J. R., & Naswall, K. (2013). The effect of affective commitment, communication and participation on resistance to change: The role of change readiness. New Zealand Journal of Psychology, 42(2), 29-40.',
+      'Rafferty, A. E., Jimmieson, N. L., & Armenakis, A. A. (2013). Change readiness: A multilevel review. Journal of Management, 39(1), 110-135.',
+      'Robbins, S. P., & Judge, T. A. (2015). Organizational behavior (16th ed.). Pearson.',
     ],
   },
 ]
