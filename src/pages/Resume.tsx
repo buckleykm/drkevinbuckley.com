@@ -17,6 +17,12 @@ function SectionHeading({ children }: { children: React.ReactNode }) {
   )
 }
 
+// Maps a substring of a bullet to the anchor id a stats[].anchorId can link to.
+const bulletAnchorIds: { match: string; id: string }[] = [
+  { match: 'efficiency by 40%', id: 'stat-efficiency' },
+  { match: '$150M technology contract portfolio', id: 'stat-portfolio' },
+]
+
 const sectionNav = [
   { label: 'About', href: '#about' },
   { label: 'Experience', href: '#experience' },
@@ -145,12 +151,14 @@ function Experience() {
               </p>
               <ul className="mt-3 list-disc space-y-2 pl-5 text-slate-600">
                 {role.bullets.map((bullet) => {
-                  const isEfficiencyStat = bullet.includes('efficiency by 40%')
+                  const anchorId = bulletAnchorIds.find(({ match }) =>
+                    bullet.includes(match),
+                  )?.id
                   return (
                     <li
                       key={bullet}
-                      id={isEfficiencyStat ? 'stat-efficiency' : undefined}
-                      className={isEfficiencyStat ? 'scroll-mt-[280px]' : undefined}
+                      id={anchorId}
+                      className={anchorId ? 'scroll-mt-[280px]' : undefined}
                     >
                       {bullet}
                     </li>

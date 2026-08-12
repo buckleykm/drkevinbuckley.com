@@ -13,7 +13,7 @@ export const profile = {
 
 // anchorId links to a matching bullet id in Resume.tsx; omit if no bullet currently states this figure.
 export const stats: { value: string; label: string; anchorId?: string }[] = [
-  { value: '$150M', label: 'Portfolio Directed' },
+  { value: '$150M', label: 'Portfolio Directed', anchorId: 'stat-portfolio' },
   { value: '100+', label: 'Applications Governed' },
   { value: '40%', label: 'Efficiency Gained', anchorId: 'stat-efficiency' },
   { value: '15+', label: 'Years of Experience' },
@@ -47,6 +47,7 @@ export const experience: Role[] = [
     location: 'Lake Elsinore, CA',
     period: '2024 - 2025',
     bullets: [
+      'Selected to ensure continuity of operations during leadership transition for a $150M technology contract portfolio while concurrently serving as Government Program Manager.',
       'Directed operational oversight across five Agile software development and support services teams, maintaining continuity and stability for 50+ enterprise software solutions, including COTS and custom applications.',
       'Led through influence across eight teams comprising federal employees and 700+ contractors, strengthening engagement, accountability, and delivery coordination during leadership transition.',
       'Implemented SAFe-based planning practices and change-management communications to create a three-month roadmap containing 200+ planned objectives and 300+ planned features.',
