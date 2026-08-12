@@ -173,7 +173,7 @@ function ArtifactDetail() {
         <>
           {artifact.sections!.map((section, i) => (
             <section
-              key={section.heading}
+              key={section.heading || i}
               className={
                 i % 2 === 1
                   ? 'border-t border-emerald-100 bg-emerald-50/40'
@@ -181,9 +181,11 @@ function ArtifactDetail() {
               }
             >
               <div className="mx-auto max-w-3xl px-6 py-14">
-                <h2 className="text-xl font-semibold tracking-tight text-[#0b2416] sm:text-2xl">
-                  {section.heading}
-                </h2>
+                {section.heading && (
+                  <h2 className="text-xl font-semibold tracking-tight text-[#0b2416] sm:text-2xl">
+                    {section.heading}
+                  </h2>
+                )}
                 {section.paragraphs && (
                   <div className="mt-4 space-y-4 leading-relaxed text-slate-600">
                     {section.paragraphs.map((p) => (
@@ -214,37 +216,43 @@ function ArtifactDetail() {
               <p key={p}>{p}</p>
             ))}
           </div>
+        </section>
+      )}
 
-          {artifact.keywords && (
-            <div className="mt-10">
-              <h3 className="text-sm font-semibold uppercase tracking-wide text-emerald-700">
-                Keywords
-              </h3>
-              <div className="mt-3 flex flex-wrap gap-2">
-                {artifact.keywords.map((kw) => (
-                  <span
-                    key={kw}
-                    className="rounded bg-emerald-50 px-2 py-1 text-sm text-emerald-700"
-                  >
-                    {kw}
-                  </span>
-                ))}
+      {(artifact.keywords || artifact.references) && (
+        <section className="border-t border-emerald-100">
+          <div className="mx-auto max-w-3xl px-6 py-14">
+            {artifact.keywords && (
+              <div>
+                <h3 className="text-sm font-semibold uppercase tracking-wide text-emerald-700">
+                  Keywords
+                </h3>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {artifact.keywords.map((kw) => (
+                    <span
+                      key={kw}
+                      className="rounded bg-emerald-50 px-2 py-1 text-sm text-emerald-700"
+                    >
+                      {kw}
+                    </span>
+                  ))}
+                </div>
               </div>
-            </div>
-          )}
+            )}
 
-          {artifact.references && (
-            <div className="mt-10">
-              <h3 className="text-sm font-semibold uppercase tracking-wide text-emerald-700">
-                References
-              </h3>
-              <ol className="mt-3 space-y-2 text-sm leading-relaxed text-slate-600">
-                {artifact.references.map((ref) => (
-                  <li key={ref}>{ref}</li>
-                ))}
-              </ol>
-            </div>
-          )}
+            {artifact.references && (
+              <div className={artifact.keywords ? 'mt-10' : undefined}>
+                <h3 className="text-sm font-semibold uppercase tracking-wide text-emerald-700">
+                  References
+                </h3>
+                <ol className="mt-3 space-y-2 text-sm leading-relaxed text-slate-600">
+                  {artifact.references.map((ref) => (
+                    <li key={ref}>{ref}</li>
+                  ))}
+                </ol>
+              </div>
+            )}
+          </div>
         </section>
       )}
 
