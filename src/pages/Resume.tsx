@@ -206,8 +206,8 @@ function Projects() {
       <div className="mx-auto max-w-4xl px-6 py-16">
         <SectionHeading>Projects &amp; Artifacts</SectionHeading>
         <p className="mt-2 text-sm text-emerald-700/70">
-          Placeholder cards below — swap in real projects, case studies, or
-          writing samples in{' '}
+          Selected case studies below, with more to come — remaining
+          placeholder cards can be filled in via{' '}
           <code className="rounded bg-emerald-100/70 px-1 py-0.5 text-emerald-800">
             src/content.ts
           </code>
@@ -240,14 +240,23 @@ function Projects() {
                 ))}
               </div>
               {project.link && (
-                <a
-                  className="mt-3 inline-block text-sm font-medium text-emerald-600 hover:underline"
-                  href={project.link}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  View →
-                </a>
+                project.link.startsWith('/') ? (
+                  <Link
+                    className="mt-3 inline-block text-sm font-medium text-emerald-600 hover:underline"
+                    to={project.link}
+                  >
+                    Read case study →
+                  </Link>
+                ) : (
+                  <a
+                    className="mt-3 inline-block text-sm font-medium text-emerald-600 hover:underline"
+                    href={project.link}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    View →
+                  </a>
+                )
               )}
             </div>
           ))}
