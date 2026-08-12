@@ -7,8 +7,17 @@ const typeSectionLabel: Record<ArtifactType, string> = {
   Publication: 'Publications',
   'White Paper': 'White Papers',
 }
+const typeAnchorId: Record<ArtifactType, string> = {
+  'Case Study': 'case-studies',
+  Publication: 'publications',
+  'White Paper': 'white-papers',
+}
 
 function ArtifactsIndex() {
+  const categories = typeOrder
+    .map((type) => ({ type, items: artifacts.filter((artifact) => artifact.type === type) }))
+    .filter((category) => category.items.length > 0)
+
   return (
     <div className="min-h-screen bg-white">
       <header className="border-b border-emerald-900 bg-[#0b2416] text-white">
@@ -29,16 +38,25 @@ function ArtifactsIndex() {
             All items listed here are the intellectual property of Kevin Buckley and, where
             applicable, named collaborators credited within each artifact.
           </p>
+          <nav className="mt-6 flex flex-wrap gap-x-6 gap-y-2 border-t border-white/10 pt-4 text-xs font-semibold uppercase tracking-[1.5px]">
+            {categories.map(({ type }) => (
+              <a
+                key={type}
+                href={`#${typeAnchorId[type]}`}
+                className="text-emerald-100/80 hover:text-white"
+              >
+                {typeSectionLabel[type]}
+              </a>
+            ))}
+          </nav>
         </div>
       </header>
 
       <section className="mx-auto max-w-3xl px-6 py-14">
         <div className="space-y-14">
-          {typeOrder.map((type) => {
-            const items = artifacts.filter((artifact) => artifact.type === type)
-            if (items.length === 0) return null
+          {categories.map(({ type, items }) => {
             return (
-              <div key={type}>
+              <div key={type} id={typeAnchorId[type]}>
                 <h2 className="text-sm font-semibold uppercase tracking-wide text-emerald-700">
                   {typeSectionLabel[type]}
                 </h2>
