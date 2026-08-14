@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { profile } from '../content'
 
 const navItems = [
@@ -10,6 +10,15 @@ const navItems = [
 
 function Landing() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const kevinTextRef = useRef<SVGTextElement>(null)
+  const [kevinViewBoxWidth, setKevinViewBoxWidth] = useState(335)
+
+  useEffect(() => {
+    if (kevinTextRef.current) {
+      const bbox = kevinTextRef.current.getBBox()
+      setKevinViewBoxWidth(Math.ceil(bbox.x + bbox.width) + 4)
+    }
+  }, [])
 
   return (
     <div
@@ -115,21 +124,21 @@ function Landing() {
             <div className="mx-auto h-[3px] w-[70px] bg-[#34e0a1] lg:mx-0 lg:ml-auto" />
             <h1 className="mt-5 font-black uppercase leading-[0.86] tracking-tight">
               <svg
-                viewBox="0 0 360 100"
+                viewBox={`0 0 ${kevinViewBoxWidth} 100`}
                 role="img"
                 aria-label="Kevin"
-                className="mx-auto block h-[48px] w-[173px] sm:h-[69px] sm:w-[248px] lg:mx-0 lg:ml-auto lg:h-[86px] lg:w-[310px] xl:h-[101px] xl:w-[364px]"
+                style={{ '--kevin-ratio': kevinViewBoxWidth / 100 } as React.CSSProperties}
+                className="mx-auto block h-[48px] w-[calc(var(--kevin-ratio)*48px)] sm:h-[69px] sm:w-[calc(var(--kevin-ratio)*69px)] lg:mx-0 lg:ml-auto lg:h-[86px] lg:w-[calc(var(--kevin-ratio)*86px)] xl:h-[101px] xl:w-[calc(var(--kevin-ratio)*101px)]"
               >
                 <text
+                  ref={kevinTextRef}
                   x="2"
                   y="80"
-                  textLength="335"
-                  lengthAdjust="spacingAndGlyphs"
                   className="font-black uppercase"
                   style={{ fontSize: 88 }}
                   fill="none"
                   stroke="#3a6b52"
-                  strokeWidth={2.5}
+                  strokeWidth={2}
                 >
                   KEVIN
                 </text>
