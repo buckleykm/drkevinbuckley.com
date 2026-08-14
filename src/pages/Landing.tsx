@@ -123,8 +123,10 @@ function Landing() {
                 <text
                   x="2"
                   y="80"
+                  textLength="335"
+                  lengthAdjust="spacingAndGlyphs"
                   className="font-black uppercase"
-                  style={{ fontSize: 88, letterSpacing: '-2px' }}
+                  style={{ fontSize: 88 }}
                   fill="none"
                   stroke="#3a6b52"
                   strokeWidth={2.5}
