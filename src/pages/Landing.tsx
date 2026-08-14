@@ -118,8 +118,7 @@ function Landing() {
                 viewBox="0 0 360 100"
                 role="img"
                 aria-label="Kevin"
-                className="mx-auto block h-[48px] w-auto sm:h-[69px] lg:mx-0 lg:ml-auto lg:h-[86px] xl:h-[101px]"
-                style={{ aspectRatio: '360 / 100' }}
+                className="mx-auto block h-[48px] w-[173px] sm:h-[69px] sm:w-[248px] lg:mx-0 lg:ml-auto lg:h-[86px] lg:w-[310px] xl:h-[101px] xl:w-[364px]"
               >
                 <text
                   x="2"
