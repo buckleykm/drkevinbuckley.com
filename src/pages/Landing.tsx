@@ -114,11 +114,25 @@ function Landing() {
             </div>
             <div className="mx-auto h-[3px] w-[70px] bg-[#34e0a1] lg:mx-0 lg:ml-auto" />
             <h1 className="mt-5 font-black uppercase leading-[0.86] tracking-tight">
-              <span
-                className="block text-[56px] text-transparent [-webkit-text-stroke:1.25px_#3a6b52] [text-stroke:1.25px_#3a6b52] sm:text-[80px] sm:[-webkit-text-stroke:2px_#3a6b52] sm:[text-stroke:2px_#3a6b52] lg:text-[100px] xl:text-[118px]"
+              <svg
+                viewBox="0 0 360 100"
+                role="img"
+                aria-label="Kevin"
+                className="mx-auto block h-[48px] w-auto sm:h-[69px] lg:mx-0 lg:ml-auto lg:h-[86px] xl:h-[101px]"
+                style={{ aspectRatio: '360 / 100' }}
               >
-                KEVIN
-              </span>
+                <text
+                  x="2"
+                  y="80"
+                  className="font-black uppercase"
+                  style={{ fontSize: 88, letterSpacing: '-2px' }}
+                  fill="none"
+                  stroke="#3a6b52"
+                  strokeWidth={2.5}
+                >
+                  KEVIN
+                </text>
+              </svg>
               <span className="block text-[56px] text-[#34e0a1] sm:text-[80px] lg:text-[100px] xl:text-[118px]">
                 BUCKLEY
               </span>
