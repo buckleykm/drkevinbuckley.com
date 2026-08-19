@@ -310,6 +310,21 @@ function ArtifactDetail() {
               <p key={p}>{p}</p>
             ))}
           </div>
+
+          {artifact.downloadUrl && (
+            <div className="mt-10">
+              <p className="text-sm font-medium text-slate-700">
+                {artifact.downloadLabel ?? 'Download this Publication'}
+              </p>
+              <a
+                href={artifact.downloadUrl}
+                download
+                className="mt-3 inline-block rounded-md bg-[#0b2416] px-4 py-2 text-sm font-medium text-white hover:bg-emerald-900"
+              >
+                Download PDF
+              </a>
+            </div>
+          )}
         </section>
       )}
 

@@ -247,6 +247,9 @@ export type Artifact = {
   abstractHeading?: string
   keywords?: string[]
   references?: string[]
+  // Optional downloadable source document, offered right after the abstract.
+  downloadUrl?: string
+  downloadLabel?: string
   // White-paper fields (optional — used for long-form, multi-section artifacts).
   sections?: { heading?: string; paragraphs?: string[]; bullets?: string[] }[]
 }
@@ -405,6 +408,7 @@ export const artifacts: Artifact[] = [
       'gender balance in computing',
       'diversity in computing',
     ],
+    downloadUrl: '/women-in-computing-dissertation.pdf',
   },
   {
     slug: 'creating-it-value-through-leadership',
